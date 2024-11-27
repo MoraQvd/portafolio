@@ -4,7 +4,7 @@ body {
     display: flex;
     flex-direction: column; /* Coloca el contenido y footer en columna */
     height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
-    background: linear-gradient(to top, rgba(40, 0, 142, 0.89), rgba(79, 0, 143, 0.89),rgba(40, 0, 142, 0.89));
+    background: linear-gradient(to top, rgba(176, 128, 171, 0.89), rgba(155, 80, 144, 0.89),rgb(212, 14, 133));
     color: #fff;
     justify-content: space-between; /* Esto hace que el contenido se estire para llenar el espacio disponible */
 }
@@ -15,7 +15,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background-color: #000000;
+    background-color: #370c0c;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -82,22 +82,13 @@ nav a:hover::after {
     background: #c3bbcc;
     border-radius: 10px;
     padding: 20px;
-    height: 200px;
-    width: 250px;
     font-family: Georgia, serif;
     color: #000000;
     text-align: center;
+    height: 150px;
+    width: 250px;
 }
 
-
-.seccion_autor2 {
-    background: #c3bbcc;
-    color: #000000;
-    border-radius: 10px;
-    padding: 20px;
-    height: 450px;
-    width: 400px;
-}
 
 .seccion_autor1 h3 {
     text-wrap: balance;
@@ -121,15 +112,14 @@ nav a:hover::after {
 }
 
 
-
 #icono {
-    margin-top: 40px;
+    margin-top: 10px;
     display: inline-block;
     vertical-align: middle;
     font-size: 25px;
 }
 
-#dylan {
+#mora {
     clear: left;
     vertical-align: top;
     line-height: 25px;
@@ -138,12 +128,69 @@ nav a:hover::after {
 
 }
 
+#dylan:hover {
+    color: rgba(40, 0, 142, 0.89); /* El color que deseas para resaltar la palabra */
+    font-weight: bold; /* Opcional: puedes hacerla en negrita para un mayor efecto */
+}
 
 
 
 
 
 
+
+.seccion_autor2 {
+    background: #c3bbcc;
+    color: #000000;
+    border-radius: 10px;
+    padding: 10px;
+    height: 300px;
+    width: 300px;
+}
+
+.seccion_autor2 ul {
+    list-style-type: none; /* Elimina viñetas */
+    padding: 0; /* Elimina el espacio interno */
+    margin: 0; /* Elimina márgenes adicionales */
+    display: inline; /* Alinea los elementos como texto en línea */
+    cursor: pointer;
+}
+
+
+
+.seccion_autor2 h2 {
+    font-size: 30px;
+    text-align: left;
+}
+
+.seccion_autor2 h3,
+.seccion_autor2 ul li {
+    text-align: center;
+    justify-content: left;
+}
+
+
+/* Specific colors for each skill */
+#HTML .primera {
+    color: rgba(40, 0, 142, 0.89); /* Naranja para HTML */
+}
+
+#PYTHON .primera {
+    color: rgba(40, 0, 142, 0.89); /* Verde para PYTHON */
+}
+
+#CSS .primera {
+    color: rgba(40, 0, 142, 0.89); /* Azul para CSS */
+}
+
+#JAVASCRIPT .primera {
+    color: rgba(40, 0, 142, 0.89); /* Amarillo para JAVASCRIPT */
+}
+
+.seccion_autor2 ul li:hover {
+    color: rgba(40, 0, 142, 0.89); /* Cambia el color del texto */
+    transform: scale(1.02); /* Efecto de escala */
+}
 
 
 
@@ -151,36 +198,20 @@ nav a:hover::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 40px;
+
 }
 
 .seccion_proyectos1 {
-   background-color: #000000;
-    color: white;
+    background: #c3bbcc;
+    color: rgb(0, 0, 0);
     border-radius: 10px;
-    padding: 20px;
-    cursor: pointer;
-    height: 300px;
-    width: 100px;
-}
-
-.seccion_proyectos2 {
-   background-color: #000000;
-    color: white;
-    border-radius: 10px;
-    padding: 20px;
-    cursor: pointer;
-    height: 100px;
+    padding: 30px;
+    height: 450px;
     width: 400px;
 }
-
-
-
-
-
-
 
 
 
@@ -188,13 +219,17 @@ nav a:hover::after {
     padding: 40px 20px;
     margin: 20px auto;
     max-width: 600px;
-    background-color: #000000;
+    background: #c3bbcc;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
-.form-container input,
-.form-container textarea {
+#formulario-contacto h2 {
+    color: #000000;
+}
+
+
+.form-container input {
     display: block;
     width: 100%;
     margin-bottom: 20px;
@@ -203,11 +238,12 @@ nav a:hover::after {
     border: 1px solid #000000;
     border-radius: 6px;
     box-sizing: border-box;
+    color: #000000;
 }
 
 .form-container button {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #000000;
+    color: #ffffff;
     border: none;
     padding: 15px 30px;
     font-size: 18px;
