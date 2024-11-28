@@ -128,24 +128,27 @@ nav a:hover::after {
 
 }
 
-#dylan:hover {
+#mora:hover {
     color: rgba(40, 0, 142, 0.89); /* El color que deseas para resaltar la palabra */
     font-weight: bold; /* Opcional: puedes hacerla en negrita para un mayor efecto */
 }
 
-
-
-
-
-
+.seccion_autor1 {
+    background: #c3bbcc;
+    color: #000000;
+    border-radius: 10px;
+    padding: 10px;
+    height: 250px;
+    width: 250px;
+}
 
 .seccion_autor2 {
     background: #c3bbcc;
     color: #000000;
     border-radius: 10px;
-    padding: 10px;
-    height: 300px;
-    width: 300px;
+    padding: 40px;
+    height: 400px;
+    width: 450px;
 }
 
 .seccion_autor2 ul {
@@ -209,8 +212,26 @@ nav a:hover::after {
     color: rgb(0, 0, 0);
     border-radius: 10px;
     padding: 30px;
-    height: 450px;
-    width: 400px;
+    height: 200px;
+    width: 200px;
+}
+
+.seccion_proyectos2 {
+    background: #c3bbcc;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 30px;
+    height: 200px;
+    width: 200px;
+}
+
+.seccion_proyectos3 {
+    background: #c3bbcc;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 30px;
+    height: 200px;
+    width: 200px;
 }
 
 
