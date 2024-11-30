@@ -2,20 +2,22 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Coloca el contenido y footer en columna */
-    height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
-    background: linear-gradient(to top, rgba(176, 128, 171, 0.89), rgba(155, 80, 144, 0.89),rgb(212, 14, 133));
-    color: #fff;
-    justify-content: space-between; /* Esto hace que el contenido se estire para llenar el espacio disponible */
+    flex-direction: column;
+    min-height: 100vh; /* Usa min-height en lugar de height */
+    background: linear-gradient(to top, rgba(202, 3, 90, 0.89), rgba(141, 80, 107, 0.89), rgba(170, 131, 148, 0.89));
+    color: white;
+    justify-content: flex-start; /* Alinea los elementos al principio */
 }
 
 
+
+/* HEADER */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background-color: #370c0c;
+    background-color: #4e102a;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -25,7 +27,7 @@ header {
     height: 50px;
 }
 
-nav a {
+header nav a {
     font-weight: 600;
     padding: 10px;
     text-transform: uppercase;
@@ -35,7 +37,7 @@ nav a {
     color: white;
 }
 
-nav a::after {
+header nav a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -48,10 +50,58 @@ nav a::after {
     transition: transform 0.25s ease-out;
 }
 
-nav a:hover::after {
+header nav a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li .dropdown {
+    font-family: Georgia, serif;
+    font-size: 11px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(161, 48, 120, 0.89);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px;
+    right: 0px;
+}
+
+nav ul li:hover .dropdown {
+  display: block;
+}
+
+nav ul li .dropdown li {
+  margin: 5px 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 15px;
+  display: block;
+}
+
+
+
+
+
+
+
+
 
 .section {
     display: none;
@@ -69,24 +119,33 @@ nav a:hover::after {
     }
 }
 
+
+
+
+
+
+
+
+
 .contenedor-autor {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    padding: 20px;
+    margin-top: 10%;
 }
 
-.seccion_autor1 {
+.seccion_autor1,
+.seccion_autor2 {
     background: #c3bbcc;
     border-radius: 10px;
-    padding: 20px;
     font-family: Georgia, serif;
     color: #000000;
     text-align: center;
-    height: 150px;
-    width: 250px;
+    height: 200px;
+    width: 300px;
+    box-shadow: 0 4px 6px white;
 }
 
 
@@ -98,6 +157,7 @@ nav a:hover::after {
     color: black;
     font-size: 15px;
     text-decoration: #ffcc00 solid;
+    font-family: "Comic Sans MS", cursive;
 }
 
 .seccion_autor1 a {
@@ -106,49 +166,81 @@ nav a:hover::after {
     text-decoration: #ffcc00 solid;
 }
 
-#subtitulo {
-    font-family: "Comic Sans MS", cursive;
-    font-style: italic;
-}
 
-
-#icono {
+.seccion_autor1 a {
     margin-top: 10px;
     display: inline-block;
     vertical-align: middle;
     font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    text-align: center;
+    padding-top: 10px;
 }
 
-#mora {
+
+
+
+
+#correo_autor {
     clear: left;
     vertical-align: top;
     line-height: 25px;
     font-size: 12px;
-    font-style: italic
+    font-style: italic;
+    cursor: pointer;
+    padding-left: 10px;
 
 }
 
-#mora:hover {
-    color: rgba(40, 0, 142, 0.89); /* El color que deseas para resaltar la palabra */
-    font-weight: bold; /* Opcional: puedes hacerla en negrita para un mayor efecto */
+#correo_autor:hover {
+    color: rgba(142, 0, 97, 0.89);
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgba(142, 0, 111, 0.89);
 }
 
-.seccion_autor1 {
-    background: #c3bbcc;
-    color: #000000;
-    border-radius: 10px;
-    padding: 10px;
-    height: 250px;
-    width: 250px;
+#confirmacion_mensaje {
+    font-size: 15px;
+    display: none;
+    width: 220px; /* Ajusta el ancho para móviles */
+    top: 400px;
+    background-color: rgba(142, 0, 83, 0.89);
+    color: white;
+    text-align: center;
+    position: fixed;
 }
+
+@media (max-width: 1008px) {
+    #confirmacion_mensaje {
+        width: 210px; /* Ajusta el ancho para móviles */
+        top: 300px;    /* Ajusta la posición para móviles */
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-autor {
+        flex-direction: column;
+    }
+    .seccion_autor1, .seccion_autor2 {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+
 
 .seccion_autor2 {
+    font-family: Georgia, serif;
     background: #c3bbcc;
     color: #000000;
     border-radius: 10px;
-    padding: 40px;
-    height: 400px;
-    width: 450px;
+    height: 200px;
+    width: 300px;
+    text-align: center;
 }
 
 .seccion_autor2 ul {
@@ -161,78 +253,175 @@ nav a:hover::after {
 
 
 
-.seccion_autor2 h2 {
-    font-size: 30px;
-    text-align: left;
+#HTML .color {
+    color: rgba(142, 0, 85, 0.89);
 }
 
-.seccion_autor2 h3,
-.seccion_autor2 ul li {
-    text-align: center;
-    justify-content: left;
+#PYTHON .color {
+    color: rgba(142, 0, 85, 0.89);
+}
+
+#CSS .color {
+    color: rgba(142, 0, 85, 0.89);
+}
+
+#JAVASCRIPT .color {
+    color: rgba(142, 0, 85, 0.89);
 }
 
 
-/* Specific colors for each skill */
-#HTML .primera {
-    color: rgba(40, 0, 142, 0.89); /* Naranja para HTML */
-}
-
-#PYTHON .primera {
-    color: rgba(40, 0, 142, 0.89); /* Verde para PYTHON */
-}
-
-#CSS .primera {
-    color: rgba(40, 0, 142, 0.89); /* Azul para CSS */
-}
-
-#JAVASCRIPT .primera {
-    color: rgba(40, 0, 142, 0.89); /* Amarillo para JAVASCRIPT */
-}
 
 .seccion_autor2 ul li:hover {
-    color: rgba(40, 0, 142, 0.89); /* Cambia el color del texto */
-    transform: scale(1.02); /* Efecto de escala */
+    color: rgba(142, 0, 85, 0.89);
+    transform: scale(1.02);
 }
 
 
 
-.contenedor-proyectos {
+
+
+
+
+/* Contenedor de descripción de proyectos */
+.descripcion-destacados {
+    text-align: center;
+    padding: 20px;
+    background-color: #c3bbcc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Georgia, serif;
+    color: #000000;
+    width: 80%;
+    height: 80px;
+}
+
+.descripcion-destacados h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.descripcion-destacados p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contenedor-proyecto {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
     flex-wrap: wrap;
-    padding: 40px;
-
+    padding: 20px;
 }
 
-.seccion_proyectos1 {
-    background: #c3bbcc;
-    color: rgb(0, 0, 0);
+
+
+
+
+/* Contenedor de proyectos destacados */
+.destacados-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
     border-radius: 10px;
-    padding: 30px;
-    height: 200px;
-    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.seccion_proyectos2 {
+/* Proyecto individual dentro del contenedor */
+.destacados-container .seccion_proyecto2 {
     background: #c3bbcc;
-    color: rgb(0, 0, 0);
     border-radius: 10px;
-    padding: 30px;
-    height: 200px;
-    width: 200px;
+    padding: 15px;
+    font-family: Georgia, serif;
+    color: #000000;
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.seccion_proyectos3 {
-    background: #c3bbcc;
-    color: rgb(0, 0, 0);
-    border-radius: 10px;
-    padding: 30px;
-    height: 200px;
-    width: 200px;
+.destacados-container .seccion_proyecto2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* Detalle del proyecto */
+.detalle-proyecto {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e7e4ed;
+    border-radius: 10px;
+    font-family: Georgia, serif;
+    color: #000000;
+    max-width: 600px;
+}
+
+.detalle-proyecto h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.detalle-proyecto p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.detalle-proyecto ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.detalle-proyecto ul li {
+    margin: 5px 0;
+}
+
+/* Enlace de detalles */
+.enlace-detalle {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: rgba(142, 0, 88, 0.89);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.enlace-detalle:hover {
+    background-color: rgba(255, 255, 255, 0.89);
+    color: rgba(142, 0, 88, 0.89);
+    transition: background-color 1s ease;
+}
+
+
+
+
+
+
+
 
 
 
@@ -250,7 +439,7 @@ nav a:hover::after {
 }
 
 
-.form-container input {
+.formulario input {
     display: block;
     width: 100%;
     margin-bottom: 20px;
@@ -262,8 +451,8 @@ nav a:hover::after {
     color: #000000;
 }
 
-.form-container button {
-    background-color: #000000;
+.formulario button {
+    background-color: rgba(142, 0, 88, 0.89);
     color: #ffffff;
     border: none;
     padding: 15px 30px;
@@ -273,40 +462,42 @@ nav a:hover::after {
     transition: background-color 0.3s ease;
 }
 
-.form-container button:hover {
-    background-color: #333;
+.formulario :hover {
+    background-color: #ffffff;
+    color: rgba(142, 0, 88, 0.89);
 }
 
 
+
 footer {
-    margin-top: auto; /* Este es el cambio clave para asegurar que el footer se mueva al fondo */
+    margin-top: auto;
     background-color: #000000;
     color: white;
     padding: 20px;
     text-align: center;
 }
 
-.social-icon {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    padding: 0; /* Elimina el padding por defecto */
-    margin: 0; /* Elimina el margen por defecto */
-    display: flex; /* Alinea los elementos horizontalmente */
-    justify-content: center; /* Centra los iconos */
-    gap: 15px; /* Espaciado entre los iconos */
+.social {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-.social-icon .icon {
+.social .iconos {
     display: inline-block;
 }
 
-.social-icon a {
+.social a {
     color: white;
     font-size: 24px;
     text-decoration: none;
 }
 
-.social-icon a:hover {
-    color: #ffcc00;
+.social a:hover {
+    color: rgba(209, 28, 131, 0.89);
 }
 
 .footer p {

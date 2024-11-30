@@ -1,0 +1,156 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Usa min-height en lugar de height */
+    background: linear-gradient(to top, rgba(202, 3, 90, 0.89), rgba(141, 80, 107, 0.89), rgba(170, 131, 148, 0.89));
+    color: white;
+    justify-content: flex-start; /* Alinea los elementos al principio */
+}
+
+
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 50px;
+}
+
+header nav a {
+    font-weight: 600;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+header nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li .dropdown {
+    font-family: Georgia, serif;
+    font-size: 11px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(142, 0, 97, 0.89);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px;
+    right: 0px;
+}
+
+nav ul li:hover .dropdown {
+  display: block;
+}
+
+nav ul li .dropdown li {
+  margin: 5px 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 15px;
+  display: block;
+}
+
+
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+footer {
+    margin-top: auto;
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.social {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social .iconos {
+    display: inline-block;
+}
+
+.social a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social a:hover {
+    color: rgba(209, 28, 122, 0.89);
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
